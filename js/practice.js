@@ -180,6 +180,6 @@ function load(){
     return true;
   }catch(e){L=[];return false}
 }
-$("#back1").onclick=()=>location.href="index.html";$("#home1").onclick=home;$("#home2").onclick=()=>location.href="index.html";
+$("#back1").onclick=home;$("#home1").onclick=home;$("#home2").onclick=()=>location.href="index.html";
 home();
 if(new URLSearchParams(location.search).get("launch")==="1")openTest(TESTS[0]);
