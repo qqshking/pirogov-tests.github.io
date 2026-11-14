@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Анатомия: Коллоквиум 2 · Миология</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="css/anatomy.css">
+</head>
+<body>
+<main>
+<section id="v-home">
+  <span class="chip">Анатомия</span>
+  <h1>Тесты</h1>
+  <p class="sub">Выберите тест. Прогресс сохраняется на этом устройстве.</p>
+  <div class="list" id="list"></div>
+</section>
+
+<section id="v-set" hidden>
+  <button class="link" id="back1" style="display:block;margin-bottom:8px">← Все тесты</button>
+  <span class="chip">Анатомия</span>
+  <h1 id="set-title"></h1>
+  <p class="sub">Вопросов в базе: <span id="cnt"></span>. В каждом может быть несколько верных ответов.</p>
+  <div class="card">
+    <label class="row"><span><b>Перемешивать вопросы</b><small>Выключено: порядок как в базе</small></span><input class="sw" type="checkbox" role="switch" id="sq"></label>
+    <label class="row"><span><b>Перемешивать ответы</b><small>Варианты в новом порядке каждый раз</small></span><input class="sw" type="checkbox" role="switch" id="sa" checked></label>
+    <label class="row"><span><b>Подсказать кол-во ответов</b><small>Сколько вариантов нужно выбрать</small></span><input class="sw" type="checkbox" role="switch" id="hint" checked></label>
+    <label class="row"><span><b>Выдать все вопросы</b><small>Выключено: 30 случайных вопросов</small></span><input class="sw" type="checkbox" role="switch" id="all" checked></label>
+  </div>
+  <button class="btn full" id="go" style="margin-top:20px">Поехали!</button>
+</section>
+
+<section id="v-quiz" hidden>
+  <div class="head">
+    <div class="line"><span class="grp"><button class="link" id="home1" aria-label="К списку тестов" style="font-size:22px;line-height:1">←</button><span id="pos"></span></span><span class="chip" id="chip" hidden></span><button class="link" id="fin">Завершить</button></div>
+    <div class="track"><div id="bar"></div></div>
+  </div>
+  <div class="card q">
+    <p class="qn" id="qn"></p>
+    <h2 id="qt"></h2>
+    <p id="hint-t"></p>
+    <div id="ans"></div>
+  </div>
+  <div class="nav"><button class="btn alt" id="prev">Назад</button><button class="btn" id="main">Проверить</button></div>
+</section>
+
+<section id="v-res" hidden>
+  <div class="card res">
+    <div class="ring" id="ring"><div id="pct"></div></div>
+    <h1 id="rt"></h1>
+    <p class="sub" id="rs"></p>
+    <div class="stats">
+      <div class="stat"><b id="s-ok"></b><span>верно</span></div>
+      <div class="stat"><b id="s-bad"></b><span>ошибок</span></div>
+      <div class="stat"><b id="s-no"></b><span>без ответа</span></div>
+    </div>
+    <button class="btn full" id="retry">Прорешать ошибки</button>
+    <button class="btn alt full" id="again" style="margin-top:10px">Пройти заново</button>
+    <button class="btn alt full" id="home2" style="margin-top:10px">Все тесты</button>
+  </div>
+  <div id="wrong"></div>
+</section>
+</main>
+<script src="js/myology-questions.js" defer></script>
+<script src="js/myology.js" defer></script>
+</body>
+</html>
